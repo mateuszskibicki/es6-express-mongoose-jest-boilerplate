@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 import util from 'util';
 import debug from 'debug';
-// config should be imported before importing any other file
 import config from './config/config';
 import app from './config/express';
 
@@ -24,8 +23,6 @@ if (config.mongooseDebug) {
   });
 }
 
-// module.parent check is required to support mocha watch
-// src: https://github.com/mochajs/mocha/issues/1912
 if (!module.parent) {
   // listen on port config.port
   app.listen(config.port, () => {
